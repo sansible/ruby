@@ -1,0 +1,6 @@
+---
+
+- name: Install Ruby
+  include: install.yml
+  tags:
+    - build

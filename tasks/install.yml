@@ -1,0 +1,29 @@
+---
+
+- name: Add Ruby repository
+  become: yes
+  apt_repository:
+    repo: ppa:brightbox/ruby-ng
+    state: present
+    update_cache: yes
+
+- name: Install Ruby
+  become: yes
+  apt:
+    name: "ruby{{ ruby.version }}"
+    state: present
+
+- name: Install Ruby Dev
+  become: yes
+  apt:
+    name: "ruby{{ ruby.version }}-dev"
+    state: present
+  when: ruby.include_dev_bundle
+
+- name: Install default global Ruby gems
+  become: yes
+  gem:
+      name: "{{ item }}"
+      state: present
+      user_install: no
+  with_items: ruby.gems

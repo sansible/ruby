@@ -1,0 +1,8 @@
+---
+
+ruby:
+  include_dev_bundle: no
+  # Default gems to install globally
+  gems:
+    - bundler
+  version: "2.2"
