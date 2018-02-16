@@ -10,15 +10,15 @@
 - name: Install Ruby
   become: yes
   apt:
-    name: "ruby{{ ruby.version }}"
+    name: "ruby{{ sansible_ruby_version }}"
     state: present
 
 - name: Install Ruby Dev
   become: yes
   apt:
-    name: "ruby{{ ruby.version }}-dev"
+    name: "ruby{{ sansible_ruby_version }}-dev"
     state: present
-  when: ruby.include_dev_bundle
+  when: sansible_ruby_include_dev_bundle
 
 - name: Install default global Ruby gems
   become: yes
@@ -26,4 +26,4 @@
       name: "{{ item }}"
       state: present
       user_install: no
-  with_items: "{{ ruby.gems }}"
+  with_items: "{{ sansible_ruby_gems }}"

@@ -1,8 +1,6 @@
 ---
 
-ruby:
-  include_dev_bundle: no
-  # Default gems to install globally
-  gems:
+sansible_ruby_gems:
     - bundler
-  version: "2.2"
+sansible_ruby_include_dev_bundle: no
+sansible_ruby_version: "2.2"
