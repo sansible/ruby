@@ -3,26 +3,11 @@
 Master: [![Build Status](https://travis-ci.org/sansible/ruby.svg?branch=master)](https://travis-ci.org/sansible/ruby)  
 Develop: [![Build Status](https://travis-ci.org/sansible/ruby.svg?branch=develop)](https://travis-ci.org/sansible/ruby)
 
-* [ansible.cfg](#ansible-cfg)
 * [Installation and Dependencies](#installation-and-dependencies)
 * [Tags](#tags)
 * [Examples](#examples)
 
 This roles installs ruby and bundler globally.
-
-
-
-
-
-## ansible.cfg
-
-This role is designed to work with merge "hash_behaviour". Make sure your
-ansible.cfg contains these settings
-
-```INI
-[defaults]
-hash_behaviour = merge
-```
 
 
 
@@ -34,7 +19,7 @@ To install run `ansible-galaxy install sansible.ruby` or add this to your
 
 ```YAML
 - name: sansible.ruby
-  version: v1.0
+  version: v2.0
 ```
 
 and run `ansible-galaxy install -p ./roles -r roles.yml`
@@ -72,9 +57,8 @@ To install without default config:
 
   roles:
     - role: sansible.ruby
-      ruby:
-        version: "2.3"
-        gems:
+      ruby_version: "2.3"
+      ruby_gems:
           - bundler
           - sass
 ```
