@@ -1,14 +1,16 @@
 ---
 
-dependencies: [ ]
-
 galaxy_info:
   description: "Install Ruby."
   license: MIT
   min_ansible_version: 2.2
+  min_ansible_container_version: 2.2
   platforms:
     - name: Ubuntu
       versions:
         - trusty
-  categories:
+        - xenial
+  galaxy_tags:
     - development
+
+dependencies: []
